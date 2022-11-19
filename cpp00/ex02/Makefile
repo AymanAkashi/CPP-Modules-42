@@ -2,9 +2,9 @@
 OBJS_DIR		:= obj
 
 # *********************************** Files ************************************
-NAME	:= phonebook
-SRCS	:= phonebook.cpp main.cpp
-INC		:= phonebook.hpp
+NAME	:= Account
+SRCS	:= tests.cpp Account.cpp
+INC		:= Account.hpp
 OBJS	:= $(SRCS:.cpp=.o)
 
 # ****************************** COLORS ***************************************
