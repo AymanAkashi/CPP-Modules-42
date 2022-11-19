@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/18 19:54:50 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:42:16 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,29 +84,23 @@ bool check_command(std::string &s)
 	return (true);
 }
 
-void	print_contacts(Phonebook contact[8])
+void	print_contact(Phonebook contacts[8])
 {
 	int i = 0;
-	std::cout << "    Id    | First name| Last name | Nickname " << std::endl;
-	std::cout << "**********************************************" << std::endl;
-	while (contact[i].first_name != "")
+	if (contacts[0].first_name == "")
+		std::cout << RED << "No contacts found\n" << GREEN << "Use Command ADD to set new contact\n" << NC;
+	else
 	{
-		std::cout << "........." << i+1 << "|";
-		put_string(contact[i].first_name, false);
-		put_string(contact[i].last_name, false);
-		put_string(contact[i].nickname, true);
-		i++;
-	}
-	std::cout << "**********************************************" << std::endl;
-	while (!std::cin.eof())
-	{
-		std::string id;
-		std::cout << BLUE << "Enter ID of contact:" << NC;
-		std::getline(std::cin, id);
-		if (check_command(id))
+		std::cout << "    Id    | First name| Last name | Nickname " << std::endl;
+		std::cout << "**********************************************" << std::endl;
+		while (i < 8 && contacts[i].first_name != "")
 		{
-			get_index(contact, id);
-			break ;
+			std::cout << "........." << i+1 << "|";
+			put_string(contacts[i].first_name, false);
+			put_string(contacts[i].last_name, false);
+			put_string(contacts[i].nickname, true);
+			i++;
 		}
+		std::cout << "**********************************************" << std::endl;
 	}
 }

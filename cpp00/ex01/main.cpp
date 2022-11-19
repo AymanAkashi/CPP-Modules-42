@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:33:19 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/18 17:20:49 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:44:01 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 		else if (s == "ADD")
 			pb.add_contact();
 		else if (s == "SEARCH")
-			pb.search_contact();
+			pb.contact::search_contact();
 		else
 			std::cout << RED << "Error: invalid command" << NC << std::endl;
 	}

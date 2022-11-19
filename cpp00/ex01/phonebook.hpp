@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:39 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/18 19:46:20 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:43:38 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ class Phonebook
 		std::string phone_number;
 };
 
-void	print_contacts(Phonebook contact[8]);
 std::string get_input(std::string s);
 void	get_index(Phonebook contacts[8], std::string &s);
-bool check_command(std::string &s);
+bool	 check_command(std::string &s);
+void	print_contact(Phonebook contacts[8]);
+void	put_string(std::string &s, bool last);
+
 class contact
 {
 	private:
@@ -48,8 +50,7 @@ class contact
 	public:
 		void add_contact()
 		{
-			if (index == 8)
-			index = 0;
+			index %= 8;
 			contacts[index].first_name = get_input("First name");
 			contacts[index].last_name = get_input("Last name");
 			contacts[index].nickname = get_input("Nickname");
@@ -59,9 +60,20 @@ class contact
 		}
 		void search_contact()
 		{
-			print_contacts(contacts);
-			
+			print_contact(contacts);
+			while (!std::cin.eof())
+			{
+				std::string id;
+				std::cout << BLUE << "Enter ID of contacts:" << NC;
+				std::getline(std::cin, id);
+				if (check_command(id))
+				{
+					get_index(contacts, id);
+					break ;
+				}
+			}
 		}
 };
+
 
  #endif
