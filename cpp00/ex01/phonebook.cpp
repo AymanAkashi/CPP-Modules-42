@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/19 14:42:16 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/20 20:40:06 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,17 @@ std::string get_input(std::string s)
 	{
 		std::cout << GREEN << s << ": " << NC;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			break;
 		if (check_prompt(input))
 			return (input);
 	}
 	exit(EXIT_SUCCESS);
 }
 
-void	get_index(Phonebook contacts[8], std::string &s)
+void	get_index(Phonebook contacts[8], int s)
 {
-	int id = stoi(s) - 1;
+	int id = s - 1;
 	if (contacts[id].first_name == "")
 		std::cout << "ID is not found!" << std::endl;
 	else
@@ -66,22 +68,25 @@ void	put_string(std::string &s, bool last)
 		std::cout << std::endl;
 }
 
-bool check_command(std::string &s)
+bool check_command(int s)
 {
-	for(int i = 0; i < (int)s.length();i++)
-	{
-		if (!isdigit(s[i]))
-		{
-			std::cout << "Is not digit\n";
-			return (false);
-		}
-	}
-	if (stoi(s) > 8 || stoi(s) < 1)
+	if (s > 8 || s <= 0)
 	{
 		std::cout << "ID is incorrect\n";
 		return (false);
 	}
 	return (true);
+}
+
+void	contact::add_contact(void)
+{
+	index %= 8;
+	contacts[index].first_name = get_input("First name");
+	contacts[index].last_name = get_input("Last name");
+	contacts[index].nickname = get_input("Nickname");
+	contacts[index].darkest_secret = get_input("Darkest secret");
+	contacts[index].phone_number = get_input("Phone number");
+	index++;
 }
 
 void	print_contact(Phonebook contacts[8])
@@ -102,5 +107,26 @@ void	print_contact(Phonebook contacts[8])
 			i++;
 		}
 		std::cout << "**********************************************" << std::endl;
+	}
+}
+
+void	contact::search_contact(void)
+{
+	print_contact(contacts);
+	while (!std::cin.eof())
+	{
+		std::string s;
+		int	id;
+		std::cout << BLUE << "Enter ID of contacts:" << NC;
+		getline(std::cin, s);
+		id = s[0] - 48;
+		if (std::cin.eof())
+			break;
+		if (id != '\n' && check_command(id))
+		{
+			get_index(contacts,  id);
+			break ;
+		}
+		std::cin.clear();
 	}
 }

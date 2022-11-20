@@ -26,12 +26,12 @@ OBJ_DEP := $(addprefix $(OBJS_DIR)/, $(OBJS))
 # ********************************** Targets ***********************************
 all: $(NAME)
 
-$(NAME): $(OBJ_DEP) $(INC)
+$(NAME): $(OBJ_DEP) 
 		@echo "$(BLUE)Building	$(YELLOW)$(NAME)$(NC)"
 		@$(CC) $(CFLAGS) $(OBJ_DEP) -o $(NAME)
 
 
-$(OBJS_DIR)/%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp $(INC)
 	@$(MKDIR) $(OBJS_DIR)
 	@echo "$(GREEN)Compiling	$(YELLOW)$(shell basename $<)$(NC)"
 	@$(CC) $(CFLAGS) -c -o $@ $<

@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:33:19 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/19 14:44:01 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/20 20:27:32 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main()
 	std::string s;
 	contact pb;
 
+	std::cin.tie(nullptr);
 	while (!std::cin.eof())
 	{
 		std::cout << YELLOW << "Enter a command: " << NC;

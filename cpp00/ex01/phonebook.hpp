@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:39 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/19 14:43:38 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/20 20:33:53 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ class Phonebook
 };
 
 std::string get_input(std::string s);
-void	get_index(Phonebook contacts[8], std::string &s);
-bool	 check_command(std::string &s);
+void	get_index(Phonebook contacts[8], int s);
+bool 	check_command(int s);
 void	print_contact(Phonebook contacts[8]);
 void	put_string(std::string &s, bool last);
 
@@ -48,31 +48,8 @@ class contact
 		Phonebook contacts[8];
 		int index;
 	public:
-		void add_contact()
-		{
-			index %= 8;
-			contacts[index].first_name = get_input("First name");
-			contacts[index].last_name = get_input("Last name");
-			contacts[index].nickname = get_input("Nickname");
-			contacts[index].darkest_secret = get_input("Darkest secret");
-			contacts[index].phone_number = get_input("Phone number");
-			index++;
-		}
-		void search_contact()
-		{
-			print_contact(contacts);
-			while (!std::cin.eof())
-			{
-				std::string id;
-				std::cout << BLUE << "Enter ID of contacts:" << NC;
-				std::getline(std::cin, id);
-				if (check_command(id))
-				{
-					get_index(contacts, id);
-					break ;
-				}
-			}
-		}
+		void add_contact();
+		void search_contact();
 };
 
 
