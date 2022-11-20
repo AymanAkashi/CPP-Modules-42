@@ -6,14 +6,13 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:56:50 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/19 17:46:14 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/19 21:51:51 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
-#include <iostream>
 
 // ************************************************************************** //
 //                               Account Class                                //

@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:07:35 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/17 15:48:16 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/20 13:10:11 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int main(int ac, char **av)
 				s[j] = toupper(s[j]);
 			std::cout << s;
 			i++;
-			if (av[i])
-				std::cout << " ";
+		 
 		}
 	}
 	std::cout << "\n";
