@@ -6,12 +6,20 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:20:15 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/19 21:52:17 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/20 22:51:24 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+
+void	Account::displayAccountsInfos(void)
+{
+	Account::_displayTimestamp();
+	std::cout << "accounts:" << Account::_nbAccounts << ";total:"
+	<< Account::_totalAmount << ";deposits:" << Account::_totalNbDeposits 
+	<< ";withdrawals:" << Account::_totalNbWithdrawals << std::endl;
+}
 
 void	Account::_displayTimestamp(void)
 {
@@ -37,17 +45,29 @@ void	Account::makeDeposit( int deposit )
 	Account::_totalNbDeposits++;
 }
 
+void	Account::displayStatus(void) const
+{
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";amount:" 
+	<< this->_amount << ";deposits:" << this->_nbDeposits 
+	<< ";withdrawals:" << this->_nbWithdrawals << std::endl;
+}
+
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	Account::_displayTimestamp();
 	this->_nbDeposits++;
 	Account::_totalAmount += withdrawal;
 	Account::_totalNbDeposits++;
-	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << "created" << std::endl;
+	std::cout << "index:" << this->_accountIndex << ";amount:"
+	<< this->_amount << "created" << std::endl;
 	return (true);
 }
 
-Account::Account(int initial_deposit) : _accountIndex(Account::_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
+Account::Account(int initial_deposit) : _accountIndex(Account::_nbAccounts),
+										_amount(initial_deposit),
+										_nbDeposits(0),
+										_nbWithdrawals(0)
 {
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";amount:" << this->_amount << "created" << std::endl;
