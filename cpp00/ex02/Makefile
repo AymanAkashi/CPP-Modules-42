@@ -18,8 +18,6 @@ PURPLE			:= \033[1;35m
 # ****************************** Compiler Options ******************************
 CC			:= c++
 CFLAGS		:= -Wall -Wextra -Werror -std=c++98
-
-
 # ******************************* Other commands *******************************
 RM		:= rm -rf
 MKDIR	:= mkdir -p
