@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/21 19:00:49 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/21 21:30:27 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,9 @@ Contact::~Contact()
 
 void	Phonebook::add_contact(Phonebook &pb)
 {
-	Contact contact;
 
 	pb.index %= 8;
-	(Contact(contact));
-	pb.contacts[pb.index] = contact;
+	(Contact(pb.contacts[pb.index]));
 	pb.index++;
 }
 
@@ -144,7 +142,7 @@ void	Phonebook::search_contact(Phonebook &pb)
 			int	id;
 			std::cout << BLUE << "Enter ID of contacts:" << NC;
 			getline(std::cin, s);
-			id = s[0] - 48;
+			id = atoi(s.c_str());
 			if (std::cin.eof())
 				break;
 			if (id != '\n' && check_command(id))
