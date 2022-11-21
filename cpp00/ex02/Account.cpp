@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:20:15 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/20 22:51:24 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:35:58 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	Account::displayAccountsInfos(void)
 
 void	Account::_displayTimestamp(void)
 {
-	time_t time;
+	time_t timestate;
 	struct tm *timeinfo;
 
-	time = std::time(0);
-	timeinfo = std::localtime(&time);
+	timestate = time(NULL);
+	timeinfo = localtime(&timestate);
 	std::cout << "[" << timeinfo->tm_year <<
 	timeinfo->tm_mon << timeinfo->tm_mday << "_" <<
 	timeinfo->tm_hour <<
@@ -35,7 +35,7 @@ void	Account::_displayTimestamp(void)
 	timeinfo->tm_sec << "] ";
 }
 
-void	Account::makeDeposit( int deposit )
+void	Account::makeDeposit(int deposit)
 {
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex << ";p_amount:" << std::endl;
@@ -43,6 +43,7 @@ void	Account::makeDeposit( int deposit )
 	this->_nbDeposits++;
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits++;
+	return ;
 }
 
 void	Account::displayStatus(void) const
@@ -51,6 +52,7 @@ void	Account::displayStatus(void) const
 	std::cout << "index:" << this->_accountIndex << ";amount:" 
 	<< this->_amount << ";deposits:" << this->_nbDeposits 
 	<< ";withdrawals:" << this->_nbWithdrawals << std::endl;
+	return ;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )

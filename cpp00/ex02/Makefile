@@ -1,9 +1,10 @@
 # ******************************** Directories *********************************
 OBJS_DIR		:= obj
+INC_DIR			:= .
 
 # *********************************** Files ************************************
 NAME	:= Account
-SRCS	:= tests.cpp Account.cpp
+SRCS	:= Account.cpp tests.cpp
 INC		:= Account.hpp
 OBJS	:= $(SRCS:.cpp=.o)
 
@@ -16,22 +17,23 @@ BLUE			:= \033[0;34m
 PURPLE			:= \033[1;35m
 # ****************************** Compiler Options ******************************
 CC			:= c++
-CFLAGS		:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98
 
 
 # ******************************* Other commands *******************************
 RM		:= rm -rf
 MKDIR	:= mkdir -p
 OBJ_DEP := $(addprefix $(OBJS_DIR)/, $(OBJS))
+INC_DEP	:= $(addprefix $(INC_DIR)/, $(INC))
 # ********************************** Targets ***********************************
 all: $(NAME)
 
-$(NAME): $(OBJ_DEP) $(INC)
+$(NAME): $(OBJ_DEP) $(INC_DEP)
 		@echo "$(BLUE)Building	$(YELLOW)$(NAME)$(NC)"
 		@$(CC) $(CFLAGS) $(OBJ_DEP) -o $(NAME)
 
 
-$(OBJS_DIR)/%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp $(INC_DEP)
 	@$(MKDIR) $(OBJS_DIR)
 	@echo "$(GREEN)Compiling	$(YELLOW)$(shell basename $<)$(NC)"
 	@$(CC) $(CFLAGS) -c -o $@ $<
