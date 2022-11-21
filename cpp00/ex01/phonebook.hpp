@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:39 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/20 20:33:53 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:58:48 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,32 +25,38 @@ static std::string CYAN = "\033[1;36m";
 static std::string NC = "\033[0m";
 
 
-
-class Phonebook
+class Contact
 {
-	public:
+	private:
 		std::string first_name;
 		std::string last_name;
 		std::string nickname;
 		std::string darkest_secret;
 		std::string phone_number;
+	public:
+		bool	print_contact(Contact contacts[8]);
+		void	get_index(Contact contacts[8],int id);
+		Contact();
+		~Contact();
+		Contact(Contact &c);
 };
 
-std::string get_input(std::string s);
-void	get_index(Phonebook contacts[8], int s);
-bool 	check_command(int s);
-void	print_contact(Phonebook contacts[8]);
-void	put_string(std::string &s, bool last);
-
-class contact
+class Phonebook
 {
 	private:
-		Phonebook contacts[8];
+		Contact contacts[8];
 		int index;
 	public:
-		void add_contact();
-		void search_contact();
+		void add_contact(Phonebook &phonebook);
+		void search_contact(Phonebook &phonebook);
 };
 
+
+
+std::string get_input(std::string s);
+// void	get_index(Phonebook contacts[8], int s);
+bool 	check_command(int s);
+// bool	print_contact(Phonebook contacts[8]);
+void	put_string(std::string &s, bool last);
 
  #endif

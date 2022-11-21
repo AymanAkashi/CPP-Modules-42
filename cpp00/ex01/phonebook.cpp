@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/20 20:40:06 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/21 19:00:49 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ std::string get_input(std::string s)
 	exit(EXIT_SUCCESS);
 }
 
-void	get_index(Phonebook contacts[8], int s)
+void	Contact::get_index(Contact contacts[8], int id)
 {
-	int id = s - 1;
+	id--;
 	if (contacts[id].first_name == "")
 		std::cout << "ID is not found!" << std::endl;
 	else
@@ -78,22 +78,46 @@ bool check_command(int s)
 	return (true);
 }
 
-void	contact::add_contact(void)
+Contact::Contact(Contact &c)
 {
-	index %= 8;
-	contacts[index].first_name = get_input("First name");
-	contacts[index].last_name = get_input("Last name");
-	contacts[index].nickname = get_input("Nickname");
-	contacts[index].darkest_secret = get_input("Darkest secret");
-	contacts[index].phone_number = get_input("Phone number");
-	index++;
+	c.first_name = get_input("first name");
+	c.last_name = get_input("last name");
+	c.nickname = get_input("nickname");
+	c.phone_number = get_input("phone number");
+	c.darkest_secret = get_input("darkest secret");
 }
 
-void	print_contact(Phonebook contacts[8])
+Contact::Contact()
+{
+	this->first_name = "";
+	this->last_name = "";
+	this->nickname = "";
+	this->phone_number = "";
+	this->darkest_secret = "";
+}
+
+Contact::~Contact()
+{
+}
+
+void	Phonebook::add_contact(Phonebook &pb)
+{
+	Contact contact;
+
+	pb.index %= 8;
+	(Contact(contact));
+	pb.contacts[pb.index] = contact;
+	pb.index++;
+}
+
+bool	Contact::print_contact(Contact contacts[8])
 {
 	int i = 0;
 	if (contacts[0].first_name == "")
+	{
 		std::cout << RED << "No contacts found\n" << GREEN << "Use Command ADD to set new contact\n" << NC;
+		return (false);
+	}
 	else
 	{
 		std::cout << "    Id    | First name| Last name | Nickname " << std::endl;
@@ -108,25 +132,26 @@ void	print_contact(Phonebook contacts[8])
 		}
 		std::cout << "**********************************************" << std::endl;
 	}
+	return (true);
 }
 
-void	contact::search_contact(void)
+void	Phonebook::search_contact(Phonebook &pb)
 {
-	print_contact(contacts);
-	while (!std::cin.eof())
-	{
-		std::string s;
-		int	id;
-		std::cout << BLUE << "Enter ID of contacts:" << NC;
-		getline(std::cin, s);
-		id = s[0] - 48;
-		if (std::cin.eof())
-			break;
-		if (id != '\n' && check_command(id))
+	if (this->contacts->print_contact(pb.contacts))
+		while (!std::cin.eof())
 		{
-			get_index(contacts,  id);
-			break ;
+			std::string s;
+			int	id;
+			std::cout << BLUE << "Enter ID of contacts:" << NC;
+			getline(std::cin, s);
+			id = s[0] - 48;
+			if (std::cin.eof())
+				break;
+			if (id != '\n' && check_command(id))
+			{
+				pb.contacts->get_index(pb.contacts,id);
+				break ;
+			}
+			std::cin.clear();
 		}
-		std::cin.clear();
-	}
 }

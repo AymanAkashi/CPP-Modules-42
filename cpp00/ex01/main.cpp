@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:33:19 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/20 20:27:32 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/21 19:01:15 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	std::string s;
-	contact pb;
+	Phonebook pb;
 
 	std::cin.tie(nullptr);
 	while (!std::cin.eof())
@@ -25,10 +25,13 @@ int main()
 		if (std::cin.eof() || s == "EXIT")
 			break;
 		else if (s == "ADD")
-			pb.add_contact();
+			pb.add_contact(pb);
 		else if (s == "SEARCH")
-			pb.contact::search_contact();
+			pb.search_contact(pb);
 		else
-			std::cout << RED << "Error: invalid command" << NC << std::endl;
+		{
+			std::cout << RED << "??? invalid command" << NC << std::endl;
+			std::cout << GREEN << "!!! valid commands are: ADD, SEARCH, EXIT" << NC << std::endl;
+		}
 	}
 }
