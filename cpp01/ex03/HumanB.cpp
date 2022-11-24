@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 10:34:32 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/22 18:24:39 by aaggoujj         ###   ########.fr       */
+/*   Created: 2022/11/23 09:50:58 by aaggoujj          #+#    #+#             */
+/*   Updated: 2022/11/24 15:13:26 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#include "HumanB.hpp"
 
-#include <iostream>
-
-
-class Zombie
+void	HumanB::setWeapon(Weapon	&weapon)
 {
-	private:
-		std::string name;
-	public:
-		void	announce(void);
-		void	setname(std::string &name);
-		Zombie();
-		~Zombie();
-};
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+	this->weapon = &weapon;
+}
 
-#endif
+void	HumanB::attack(void)
+{
+	 std:: cout << this->name << "is attack !" << this->weapon->getType() << std::endl;
+}
+
+HumanB::HumanB(std::string name)
+{
+	this->name = name;
+	this->weapon= NULL;
+}
