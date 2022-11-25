@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/21 21:30:27 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/22 21:43:59 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	Contact::get_index(Contact contacts[8], int id)
 		std::cout << CYAN << "last name    :  " << contacts[id].last_name << std::endl;
 		std::cout << CYAN << "nickname     :  " << contacts[id].nickname << std::endl;
 		std::cout << CYAN << "phone_number :  " << contacts[id].phone_number << std::endl;
+		std::cout << CYAN << "darkest secret: " << contacts[id].darkest_secret << std::endl;
 	}
 }
 
@@ -96,15 +97,11 @@ Contact::Contact()
 	this->darkest_secret = "";
 }
 
-Contact::~Contact()
-{
-}
-
 void	Phonebook::add_contact(Phonebook &pb)
 {
 
 	pb.index %= 8;
-	(Contact(pb.contacts[pb.index]));
+	Contact(pb.contacts[pb.index]);
 	pb.index++;
 }
 
@@ -144,7 +141,7 @@ void	Phonebook::search_contact(Phonebook &pb)
 			getline(std::cin, s);
 			id = atoi(s.c_str());
 			if (std::cin.eof())
-				break;
+				continue;
 			if (id != '\n' && check_command(id))
 			{
 				pb.contacts->get_index(pb.contacts,id);

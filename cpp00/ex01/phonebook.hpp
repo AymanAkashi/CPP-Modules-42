@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:39 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/21 18:58:48 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:29:48 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class Contact
 		bool	print_contact(Contact contacts[8]);
 		void	get_index(Contact contacts[8],int id);
 		Contact();
-		~Contact();
 		Contact(Contact &c);
 };
 
@@ -54,9 +53,7 @@ class Phonebook
 
 
 std::string get_input(std::string s);
-// void	get_index(Phonebook contacts[8], int s);
 bool 	check_command(int s);
-// bool	print_contact(Phonebook contacts[8]);
 void	put_string(std::string &s, bool last);
 
  #endif
