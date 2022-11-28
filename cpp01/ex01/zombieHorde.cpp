@@ -6,11 +6,31 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:39:06 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/22 21:51:40 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:07:40 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+	std::cout << "Default constarcter call!" << std::endl;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "Destractor call!" << std::endl;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setname(std::string &name)
+{
+	this->name = name;
+}
 
 Zombie* zombieHorde(int N, std::string name)
 {

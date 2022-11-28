@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:34:32 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/22 20:52:40 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:07:24 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class Zombie
 		Zombie();
 		~Zombie();
 };
-Zombie* newZombie( std::string name );
 Zombie* zombieHorde(int N, std::string name);
-void randomChump( std::string name );
 
 #endif

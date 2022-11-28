@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 13:42:53 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/27 18:13:42 by aaggoujj         ###   ########.fr       */
+/*   Created: 2022/11/24 21:45:35 by aaggoujj          #+#    #+#             */
+/*   Updated: 2022/11/26 16:06:39 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "Harl.hpp"
 
-
-HumanA::HumanA(std::string name, Weapon &Weapon) : Name(name),weapon(Weapon)
+int main(int ac,char **av)
 {
-	//
-}
-
-void	HumanA::attack(void)
-{
-	 std:: cout << this->Name << "is attack !" << this->weapon.getType() << std::endl;
+	Harl h;
+	if(ac == 2)
+		h.complain(av[1]);
+	return (0);
 }

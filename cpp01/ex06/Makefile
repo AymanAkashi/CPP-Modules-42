@@ -3,9 +3,9 @@ OBJS_DIR		:= obj
 INC_DIR			:= .
 
 # *********************************** Files ************************************
-NAME	:= Zombie
-SRCS	:= main.cpp zombieHorde.cpp
-INC		:= Zombie.hpp
+NAME	:= harlFilter
+SRCS	:= Harl.cpp main.cpp
+INC		:= Harl.hpp
 OBJS	:= $(SRCS:.cpp=.o)
 
 # ****************************** COLORS ***************************************

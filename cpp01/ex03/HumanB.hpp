@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 05:18:52 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/24 14:35:43 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:13:24 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ class HumanB
 		std::string	name;
 	public:
 		HumanB(std::string name);
-		void	setWeapon(Weapon	&weapon);
+		void	setWeapon(Weapon	&Weapon);
 		void	attack(void);
-		
 };
 
 #endif
