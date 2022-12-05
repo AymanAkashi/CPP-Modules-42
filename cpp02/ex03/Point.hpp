@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/28 09:07:06 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/03 01:42:37 by aaggoujj         ###   ########.fr       */
+/*   Created: 2022/12/04 04:07:24 by aaggoujj          #+#    #+#             */
+/*   Updated: 2022/12/05 10:35:17 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FIXED_H__
-#define __FIXED_H__
+#ifndef __POINT_H__
+#define __POINT_H__
+
+#include "Fixed.hpp"
 
 #include <iostream>
-#include <cmath>
-
-class Fixed
+class Point
 {
 	private :
-		int num;
-		static const int fract_count;
+		const Fixed _x;
+		const Fixed _y;
 	public :
-		Fixed();
-		~Fixed();
-		Fixed(const int num);
-		Fixed(const float num);
-		Fixed(const Fixed &p);
-		Fixed& operator=(const Fixed &p);
-		float toFloat( void ) const;
-		int toInt( void ) const;
+		Point();
+		~Point();
+		Point(const Fixed &x, const Fixed &y);
+		Point(const Point &p);
+		Point& operator=(const Point &p);
+		float get_x() const;
+		float get_y() const;
 };
-std::ostream &operator<<(std::ostream &out ,const Fixed &p);
+float get_area(Point  a, Point  b, Point  c);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
