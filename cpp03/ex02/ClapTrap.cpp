@@ -75,6 +75,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
+void	ClapTrap::ShowState(void)
+{
+	std::cout << "Name      = "  << this->_name << std::endl << "Energy    = " <<this->energyPoints  << std::endl << "Hit point = "<< this->hitPoints << std::endl;
+}
+
+
 
 std::string ClapTrap::get_name(void)
 {

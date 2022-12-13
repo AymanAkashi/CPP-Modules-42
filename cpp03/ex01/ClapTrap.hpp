@@ -25,7 +25,7 @@ static std::string NC = "\033[0m";
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		int			hitPoints;
 		int			energyPoints;
