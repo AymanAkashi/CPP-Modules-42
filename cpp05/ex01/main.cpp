@@ -5,33 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 09:58:54 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/21 10:03:16 by aaggoujj         ###   ########.fr       */
+/*   Created: 2023/01/14 20:55:45 by aaggoujj          #+#    #+#             */
+/*   Updated: 2023/01/18 13:01:18 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-void square(int &n) {
-	n *= n;
-}
 
-int main() {
-	int arr[] = {1, 2, 3, 4, 5};
-	std::cout << "Before:" << std::endl;
-	for (int i = 0; i < 5; i++)
-		std::cout << arr[i] << std::endl;
-	try
-	{
-		iter(arr, 5, square);
-	} catch (std::invalid_argument &e)
-	{
-		std::cerr << e.what() << std::endl;
-		return 1;
-	}
-	std::cout << "After:" << std::endl;
-	for (int i = 0; i < 5; i++) {
-		std::cout << arr[i] << std::endl;
-	}
-	return 0;
+int main()
+{
+    try
+    {
+        Bureaucrat b1("Aymane", 3);
+        Bureaucrat b2("Moussa", 1);
+        Form f("Form 1", 2, 100);
+        Form f2("Form 2", 1, 100);
+        b1.incrementGrade();
+        b1.signForm(f);
+        b2.signForm(f2);
+           std::cout << f << std::endl;
+        f2.beSigned(b2);
+        std::cout << f2 << std::endl;
+    }
+    catch (std::exception& e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

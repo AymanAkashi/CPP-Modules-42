@@ -5,33 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 09:58:54 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/21 10:03:16 by aaggoujj         ###   ########.fr       */
+/*   Created: 2023/01/20 17:54:53 by aaggoujj          #+#    #+#             */
+/*   Updated: 2023/01/20 17:59:51 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "dynamic.hpp"
 
-void square(int &n) {
-	n *= n;
-}
-
-int main() {
-	int arr[] = {1, 2, 3, 4, 5};
-	std::cout << "Before:" << std::endl;
-	for (int i = 0; i < 5; i++)
-		std::cout << arr[i] << std::endl;
-	try
-	{
-		iter(arr, 5, square);
-	} catch (std::invalid_argument &e)
-	{
-		std::cerr << e.what() << std::endl;
-		return 1;
-	}
-	std::cout << "After:" << std::endl;
-	for (int i = 0; i < 5; i++) {
-		std::cout << arr[i] << std::endl;
-	}
-	return 0;
+int main()
+{
+	std::srand(time(0));
+    Base* b1 = generate();
+    identify(b1);
+    Base* b2 = generate();
+    identify(b2);
+    Base* b3 = generate();
+    identify(b3);
+    Base& c1 = *b1;
+    identify(c1);
+    Base& c2 = *b2;
+    identify(c2);
+    Base& c3 = *b3;
+    identify(c3);
+    delete b1;
+    delete b2;
+    delete b3;
 }

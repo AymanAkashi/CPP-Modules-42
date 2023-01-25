@@ -5,33 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 09:58:54 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/21 10:03:16 by aaggoujj         ###   ########.fr       */
+/*   Created: 2023/01/21 09:45:16 by aaggoujj          #+#    #+#             */
+/*   Updated: 2023/01/21 09:49:23 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "whatever.hpp"
 
-void square(int &n) {
-	n *= n;
-}
-
-int main() {
-	int arr[] = {1, 2, 3, 4, 5};
-	std::cout << "Before:" << std::endl;
-	for (int i = 0; i < 5; i++)
-		std::cout << arr[i] << std::endl;
-	try
-	{
-		iter(arr, 5, square);
-	} catch (std::invalid_argument &e)
-	{
-		std::cerr << e.what() << std::endl;
-		return 1;
-	}
-	std::cout << "After:" << std::endl;
-	for (int i = 0; i < 5; i++) {
-		std::cout << arr[i] << std::endl;
-	}
+int main()
+{
+	int a = 2;
+	int b = 3;
+	swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "MIN( a, b ) = " << MIN( a, b ) << std::endl;
+	std::cout << "MAX( a, b ) = " << MAX( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "MIN( c, d ) = " << MIN( c, d ) << std::endl;
+	std::cout << "MAX( c, d ) = " << MAX( c, d ) << std::endl;
 	return 0;
 }
