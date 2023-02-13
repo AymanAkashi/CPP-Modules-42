@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:45:20 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/20 17:46:14 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/11 13:21:18 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main() {
     data.y = 3.14;
 	data.z = "Hello World!";
 
-    uintptr_t serialized = serialize(&data);
-    Data* deserialized = deserialize(serialized);
+    uintptr_t serialized = Serializer::serialize(&data);
+    Data* deserialized = Serializer::deserialize(serialized);
 
     if (deserialized == &data)
 	{

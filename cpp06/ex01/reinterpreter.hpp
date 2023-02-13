@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:42:37 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/20 17:47:51 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/11 13:23:27 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,18 @@ struct Data
     double y;
     std::string z;
 };
+class Serializer
+{
+    private:
+        Serializer();
+        Serializer(Serializer const &rhs);
+    public:
+        ~Serializer();
+        Serializer const &operator=(Serializer const &rhs);
+        static Data* deserialize(uintptr_t raw);
+        static uintptr_t serialize(Data* ptr);
+};
 
-Data* deserialize(uintptr_t raw);
-uintptr_t serialize(Data* ptr);
 
 
 #endif

@@ -6,11 +6,14 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:53:57 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/20 17:54:28 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/11 14:07:31 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dynamic.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 Base* generate()
 {
