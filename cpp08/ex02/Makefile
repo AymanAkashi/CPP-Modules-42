@@ -3,9 +3,9 @@ OBJS_DIR		:= obj
 INC_DIR			:= .
 
 # *********************************** Files ************************************
-NAME	:= easyfind
+NAME	:= MutantStack
 SRCS	:= main.cpp
-INC		:= easyfind.hpp
+INC		:= MutantStack.hpp MutantStack.tpp
 OBJS	:= $(SRCS:.cpp=.o)
 
 # ****************************** COLORS ***************************************
@@ -17,7 +17,7 @@ BLUE			:= \033[0;34m
 PURPLE			:= \033[1;35m
 # ****************************** Compiler Options ******************************
 CC			:= c++
-CFLAGS		:= -Wall -Wextra -Werror -std=c++98
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98 -g
 # ******************************* Other commands *******************************
 RM		:= rm -rf
 MKDIR	:= mkdir -p
