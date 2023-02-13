@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:54:15 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/13 17:40:51 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/07 20:33:57 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class ClapTrap
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap();
-		ClapTrap &	operator=(ClapTrap const & p);
+		ClapTrap const &	operator=(ClapTrap const & p);
 		void		attack(std::string const & target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);

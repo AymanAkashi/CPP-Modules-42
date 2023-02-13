@@ -6,13 +6,13 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 01:23:33 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/13 17:40:51 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:46:58 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->_name = "ScavTrap";
 	this->hitPoints = 100;
@@ -56,7 +56,7 @@ void	ScavTrap::attack(std::string attacked)
 if (this->hitPoints > 0)
 	{
 		this->energyPoints--;
-		std::cout << this->_name << " Attack --> "  << attacked << std::endl;
+		std::cout << "ScavTrap " << this->_name << " attacks "  << attacked << " causing " << this->attackDamage << " points of damage!" << std::endl;
 	}
 	else
 		std::cout << "No hit point :(" << std::endl;

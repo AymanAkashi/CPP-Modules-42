@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 08:27:26 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/09 10:43:17 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:57:08 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,10 @@ int main(void)
 
 // int main(void)
 // {
-// 	ICharacter	*light;
+// 	Character	*light;
 // 	AMateria	*Dark;
 
 // 	light = new Character("light");
-// 	std::cout << light->getName() << std::endl;
 // 	light->equip(new Ice());
 // 	light->equip(new Cure());
 // 	Dark = light->getMateria(0);

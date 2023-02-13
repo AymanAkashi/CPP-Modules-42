@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:34:59 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/09 09:47:55 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:02:04 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ MateriaSource::MateriaSource()
 		this->_materia[i] = NULL;
 }
 
-MateriaSource::MateriaSource(MateriaSource const & src) : IMateriaSource()
+MateriaSource::MateriaSource(MateriaSource const & src)
 {
 	*this = src;
 }

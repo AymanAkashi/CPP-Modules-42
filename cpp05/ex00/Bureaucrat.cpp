@@ -6,11 +6,21 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:22:05 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/18 12:42:02 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/10 14:35:34 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+		return "Grade too high";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+		return "Grade too low";
+}
 
 Bureaucrat::Bureaucrat(std::string const & name, int grade) : _name(name)
 {
@@ -65,7 +75,7 @@ void				Bureaucrat::incrementGrade()
 	}
 	catch (std::exception & e)
 	{
-		std::cerr << "TooLow " << e.what() << std::endl;
+		std::cerr << "TooHigh " << e.what() << std::endl;
 	}
 }
 
@@ -80,7 +90,7 @@ void				Bureaucrat::decrementGrade()
 	}
 	catch (std::exception& e)
 	{
-		std::cerr << "TooHigh " << e.what() << std::endl;
+		std::cerr << "TooLow " << e.what() << std::endl;
 	}
 }
 

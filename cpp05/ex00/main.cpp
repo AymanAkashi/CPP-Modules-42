@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:55:45 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/18 13:01:29 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:40:58 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main()
         Bureaucrat b("Akashi", 3);
         std::cout << b << std::endl;
 
+        b.incrementGrade();
+        b.incrementGrade();
         b.incrementGrade();
         std::cout << b << std::endl;
 

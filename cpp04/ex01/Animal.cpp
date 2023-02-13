@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 13:25:00 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/24 17:25:43 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:10:26 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ Animal & Animal::operator=(Animal const & rhs)
 void	Animal::makeSound(void) const
 {
 	std::cout << "Animal Sound ...!" << std::endl;
+}
+
+void	Animal::setType(std::string type)
+{
+	this->type = type;
 }

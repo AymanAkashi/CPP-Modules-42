@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 13:28:45 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/24 20:30:14 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:53:15 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ Cat::~Cat()
 Cat& Cat::operator=(const Cat& rhs)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
-	this->type = rhs.type;
+	if (this != &rhs)
+	{
+		delete this->brain;
+		this->brain = new Brain(*rhs.brain);
+	}
 	return (*this);
 }
 
 Cat::Cat(const Cat &copy) : AAnimal(copy)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = copy;
+	this->brain = new Brain(*copy.brain);
 }
 
 void Cat::makeSound() const

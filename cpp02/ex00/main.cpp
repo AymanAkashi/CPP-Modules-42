@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:13:48 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/28 14:14:47 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:11:51 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void )
 {
 	Fixed a;
-	Fixed b( a );
+	Fixed b(a);
 	Fixed c;
 	c = b;
 	std::cout << a.getRawBits() << std::endl;

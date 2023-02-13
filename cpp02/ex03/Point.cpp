@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 04:08:34 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/05 10:51:48 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:03:35 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,10 @@ Point& Point::operator=(const Point &p)
 {
 	(void) p;
 	return *this;
-	// // std::cout << "assignment operator called" << std::endl;
-	// /*(Fixed)*/(this->_x) = p._x;
-	// /*(Fixed)*/(this->_y) = p._y;
-	// return *this;
 }
 
 Point::Point(const Point &p) : _x(p._x), _y(p._y)
 {
-	// std::cout << "Copy constractor called !!" << std::endl;
 }
 
 float Point::get_x() const

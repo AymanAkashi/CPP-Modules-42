@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:48:24 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/18 12:55:38 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:53:27 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,33 @@ void	Form::beSigned(Bureaucrat const & Bureaucrat)
 {
 	if (Bureaucrat.getGrade() > _sign_grade)
 		throw Form::GradeTooLowException();
+	if (_signed)
+		throw Form::AlreadySignedException();
 	_signed = true;
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
 {
-	os << "Form " << f.getName() << " is ";
+	os << "Form \"" << f.getName() << "\""<< " is ";
 	if (f.getSigned())
 		os << "signed";
 	else
 		os << "unsigned";
 	os << " and requires a grade of " << f.getSignGrade() << " to be signed and a grade of " << f.getExecuteGrade() << " to be executed." << std::endl;
 	return (os);
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low");
+}
+
+const char* Form::AlreadySignedException::what() const throw()
+{
+	return ("Form is already signed");
 }

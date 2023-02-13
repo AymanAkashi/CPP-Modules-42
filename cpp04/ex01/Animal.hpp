@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 13:22:59 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/24 17:22:25 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:10:30 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Animal
 		Animal & operator=(Animal const & rhs);
 		virtual void makeSound() const;
 		std::string getType() const;
+		void setType(std::string type);
 };
 
 #endif

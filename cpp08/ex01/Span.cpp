@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 12:03:57 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/24 12:43:28 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:13:07 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,17 @@ Span &Span::operator=(Span const &rhs)
 	return (*this);
 }
 
+void Span::MultiAdd(int n[])
+{
+	this->sizeumbers.insert(this->sizeumbers.end(), n, n + this->size);
+}
+
 void Span::addNumber(int n)
 {
 	if (this->sizeumbers.size() < this->size)
 		this->sizeumbers.push_back(n);
 	else
-		throw std::exception();
+		throw std::runtime_error("Span is full! Can't add more numbers !");
 }
 
 int Span::shortestSpan()
@@ -47,10 +52,10 @@ int Span::shortestSpan()
 	std::vector<int> tmp = this->sizeumbers;
 	std::sort(tmp.begin(), tmp.end());
 	int min = tmp[1] - tmp[0];
-	for (size_t i = 1; i < tmp.size() - 1; i++)
+	for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end() - 1; it++)
 	{
-		if (tmp[i + 1] - tmp[i] < min)
-			min = tmp[i + 1] - tmp[i];
+		if (*(it + 1) - *it < min)
+			min = *(it + 1) - *it;
 	}
 	return (min);
 }

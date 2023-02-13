@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 16:47:41 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/23 16:55:49 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/12 15:10:50 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int easyfind(T container, int value) {
             return *it;
         }
     }
-    throw std::runtime_error("Value not found in container.");
+    throw std::runtime_error("Value not found !!!");
 }

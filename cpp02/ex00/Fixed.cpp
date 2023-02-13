@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 09:21:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/28 17:39:03 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:57:53 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,35 @@ Fixed::~Fixed()
 	std::cout << "Destructor called !!" << std::endl;
 }
 
-Fixed::Fixed(Fixed &p)
+Fixed::Fixed(Fixed const &p)
 {
 	std::cout << "Copy constructor called !!" << std::endl;
-	this->raw = p.getRawBits();
+	*this = p;
 }
 
-Fixed& Fixed::operator=(Fixed &p)
+Fixed const & Fixed::operator=(Fixed const & p)
 {
-	Fixed &a = p;
 	std::cout << "copy assignment opertor called !!" << std::endl;
-	a.raw = p.getRawBits();
-	return a;
+	if (this != &p)
+		this->raw = p.getRawBits();
+	return *this;
 }
 
-int Fixed::getRawBits( void ) const
+/**
+ * It returns the value of the raw variable
+ * 
+ * @return The value of the raw variable.
+ */
+int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called !!" << std::endl;
 	return (this->raw);
 }
+/**
+ * It sets the raw value of the Fixed object to the value of the parameter
+ * 
+ * @param raw the raw value of the fixed point value
+ */
 
 void	Fixed::setRawBits(int const raw)
 {

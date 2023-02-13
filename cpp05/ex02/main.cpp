@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 20:55:45 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/18 16:05:46 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:51:46 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 // int main()
 // {
-//     Bureaucrat				A("Aymane", 145);
-// 	ShrubberyCreationForm	shrub("Shrub");
+//     Bureaucrat				A("Aymane", 130);
+// 	ShrubberyCreationForm	shrub("Akashi");
 
 // 	try
 // 	{
@@ -35,28 +35,13 @@
 //     return 0;
 // }
 
-// int main()
-// {
-//     try
-//     {
-//         Bureaucrat b1("Aymane", 20);
-//         RobotomyRequestForm f1("Akashi");
-//         b1.signAForm(f1);
-//         b1.executeAForm(f1);
-//     }
-//     catch (std::exception &e)
-//     {
-//         std::cerr << e.what() << std::endl;
-//     }
-//     return 0;
-// }
-
 int main()
 {
     try
     {
-        Bureaucrat b1("Aymane", 1);
-        PresidentialPardonForm f1("Akashi");
+        Bureaucrat b1("Aymane", 20);
+        RobotomyRequestForm f1("Akashi");
+        b1.signAForm(f1);
         b1.signAForm(f1);
         b1.executeAForm(f1);
     }
@@ -66,4 +51,20 @@ int main()
     }
     return 0;
 }
+
+// int main()
+// {
+//     try
+//     {
+//         Bureaucrat b1("Aymane", 1);
+//         PresidentialPardonForm f1("Akashi");
+//         b1.signAForm(f1);
+//         b1.executeAForm(f1);
+//     }
+//     catch (std::exception &e)
+//     {
+//         std::cerr << e.what() << std::endl;
+//     }
+//     return 0;
+// }
 

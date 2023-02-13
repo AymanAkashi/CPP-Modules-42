@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 08:50:25 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/09 10:33:53 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:54:25 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@ Character::Character(std::string const & name) : _name(name)
 
 Character::Character(Character const & src)
 {
-	*this = src;
+	this->_name = src._name;
+	for (int i = 0; i < 4; i++)
+		if (this->_inventory[i])
+			delete this->_inventory[i];
+	for (int i = 0; i < 4; i++)
+		if (src._inventory[i])
+			this->_inventory[i] = src._inventory[i]->clone();
 }
 
 Character::~Character()

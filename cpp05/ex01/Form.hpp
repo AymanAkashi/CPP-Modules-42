@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:36:36 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/18 12:53:50 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:53:47 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,18 @@ class Form
 		Form(Form const & src);
 		~Form();
 		Form& operator=(Form const & rhs);
-		class GradeTooHighException : public std::exception {};
-        class GradeTooLowException : public std::exception {};
+		class GradeTooHighException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
+		class AlreadySignedException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
 		std::string getName() const;
 		bool getSigned() const;
 		int getSignGrade() const;

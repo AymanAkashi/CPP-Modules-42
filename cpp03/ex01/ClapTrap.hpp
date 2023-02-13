@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:54:15 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/13 17:40:51 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/08 11:00:13 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static std::string NC = "\033[0m";
 
 class ClapTrap
 {
-	protected:
+	protected :
 		std::string	_name;
 		int			hitPoints;
 		int			energyPoints;

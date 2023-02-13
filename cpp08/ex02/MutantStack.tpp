@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:57:57 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/02/13 11:39:34 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:57:02 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ template <typename T> T *MutantStack<T>::iterator::operator->()
 
 template <typename T> typename MutantStack<T>::iterator MutantStack<T>::begin(void)
 {
-	std::stack <T> tmp(*this); 
 	return (typename MutantStack<T>::iterator(&this->top() - this->size() + 1));
 }
 

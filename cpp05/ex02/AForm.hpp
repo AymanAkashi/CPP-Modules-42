@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef AForm_HPP
 # define AForm_HPP
 
@@ -30,9 +31,22 @@ class AForm
 		AForm(AForm const & src);
 		~AForm();
 		AForm& operator=(AForm const & rhs);
-		class GradeTooHighException : public std::exception {};
-        class GradeTooLowException : public std::exception {};
-		class FormNotSignedException : public std::exception {};
+		class GradeTooHighException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
+        class GradeTooLowException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
+		class FormAlreadySignedException : public std::exception {
+			public :
+				virtual const char* what() const throw();
+		};
 		std::string 	getName() const;
 		bool			getSigned() const;
 		int 			getSignGrade() const;

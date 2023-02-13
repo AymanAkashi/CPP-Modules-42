@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 13:25:45 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/24 20:29:58 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:52:36 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public AAnimal
 {
 	public :
 		Cat();
-		virtual ~Cat();
+		~Cat();
 		Cat(const Cat &copy);
 		Cat &operator=(const Cat& rhs);
 		virtual void makeSound() const;

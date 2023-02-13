@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 19:31:19 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/24 19:40:13 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:46:26 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int main()
 		A[i]->makeSound();
 	for(int i = 0;i < 4; i++)
 		delete A[i];
-	system("leaks Animal");
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:52:21 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/11 12:44:10 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:53:36 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 	Madara.takeDamage(20);
         Madara.beRepaired(10);
         Madara.attack(Sasuki.get_name());
-        Sasuki.takeDamage(50);
+        Sasuki.takeDamage(20);
         Naruto.guardGate();
         Madara.ShowState();
         Sasuki.ShowState();

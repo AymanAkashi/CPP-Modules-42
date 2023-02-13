@@ -4,8 +4,9 @@ INC_DIR			:= .
 
 # *********************************** Files ************************************
 NAME	:= Interface
-SRCS	:= Amateria.cpp Character.cpp Cure.cpp Ice.cpp ICharacter.cpp MateriaSource.cpp IMateriaSource.cpp main.cpp 
-INC		:= AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
+SRCS	:= Amateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp 
+INC		:= AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp IMateriaSource.hpp Ice.hpp MateriaSource.hpp
+
 
 
 OBJS	:= $(SRCS:.cpp=.o)
@@ -19,7 +20,7 @@ BLUE			:= \033[0;34m
 PURPLE			:= \033[1;35m
 # ****************************** Compiler Options ******************************
 CC			:= c++
-CFLAGS		:= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98
 # ******************************* Other commands *******************************
 RM		:= rm -rf
 MKDIR	:= mkdir -p

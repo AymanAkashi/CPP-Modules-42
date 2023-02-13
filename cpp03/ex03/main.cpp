@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:52:21 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/12/13 17:53:05 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:49:15 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ int main()
 {
         DiamondTrap                        Sasuki(MAGENTA + "Sasuki" + NC);
         DiamondTrap                        Naruto(YELLOW + "Naruto" + NC);
-        DiamondTrap                        Momoshiki(RED + "Momoshiki" + NC);
+        DiamondTrap                        Madara(RED + "Madara" + NC);
 
-        Naruto.attack(Momoshiki.get_name());
-	Momoshiki.takeDamage(20);
-	Momoshiki.beRepaired(10);
-        Sasuki.attack(Momoshiki.get_name());
-        Momoshiki.takeDamage(20);
-        Momoshiki.beRepaired(10);
-        Momoshiki.attack(Sasuki.get_name());
+        Naruto.attack(Madara.get_name());
+	Madara.takeDamage(20);
+	Madara.beRepaired(10);
+        Sasuki.attack(Madara.get_name());
+        Madara.takeDamage(20);
+        Madara.beRepaired(10);
+        Madara.attack(Sasuki.get_name());
 	Sasuki.takeDamage(50);
         Sasuki.whoAmI();
         Naruto.whoAmI();
-        Momoshiki.whoAmI();
+        Madara.whoAmI();
 
 	return (0);
 }
