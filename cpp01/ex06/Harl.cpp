@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:58:27 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/27 19:21:53 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 13:55:35 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ void	Harl::info(void)
 	std::cout << YELLOW << "[ Info ]    --> this is info message !!!" << std::endl;
 }
 
+/**
+ * It takes a string and returns the corresponding enum value
+ * 
+ * @param s The string to be converted to a LEVEL
+ * 
+ * @return the level of the log.
+ */
 LEVEL gettype(std::string &s)
 {
 	std::string str[4] = {"DEBUG","INFO","WARNING","ERROR"};
@@ -46,6 +53,10 @@ LEVEL gettype(std::string &s)
 		return (Nothing);
 }
 
+/* A function pointer.
+* It's a function that takes a string as a parameter and call the function that has the same name as the string.
+* using function pointer to call the function that has the same name as the string.
+*/
 void Harl::complain(std::string level)
 {
 	void (Harl::*func[4]) () = {

@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:58:27 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/26 16:09:06 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 13:09:04 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	Harl::info(void)
 	std::cout << "[ Info ] --> this is info message !!!" << std::endl;
 }
 
+/* It's a function that takes a string as a parameter and call the function that has the same name as the string. */
 void Harl::complain(std::string level)
 {
 	void (Harl::*func[4]) () = {
@@ -60,6 +61,7 @@ void Harl::complain(std::string level)
 	if (found ==  false)
 		std::cout << "this command not found !!!" << std::endl;
 }
+
 Harl::Harl()
 {
 

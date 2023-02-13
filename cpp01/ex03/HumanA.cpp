@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:42:53 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/27 18:13:42 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:31:23 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 HumanA::HumanA(std::string name, Weapon &Weapon) : Name(name),weapon(Weapon)
 {
-	//
+	//empty
 }
 
 void	HumanA::attack(void)
