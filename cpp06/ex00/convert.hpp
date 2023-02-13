@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:07:29 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/20 12:58:27 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/11 10:06:06 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,18 @@
 #define convert_HPP
 
 #include<iostream>
+#include <sstream>
 
-#define INT_MAX	2147483647
-#define INT_MIN -2147483648
-
-
-class convert
+class ScalarConverter
 {
-	public:
-		convert();
-		convert(std::string &str);
-		~convert();
-		convert(convert const &rhs);
-		convert &operator=(convert const &rhs);
-		int Toint(void);
-		void print_int(void);
-		void Tofloat(void);
-		void Todouble(void);
-		void Tochar(void);
-		bool ischar(void);
-		bool isint(void);
-		bool isfloat(void);
-		bool isdouble(void);
 	private:
-		std::string _str;
-		int _int;
-		float _float;
-		double _double;
+		ScalarConverter();
+		ScalarConverter(ScalarConverter const &rhs);
+	public:
+		static std::string _str;
+		static void	convert(std::string &str);
+		~ScalarConverter();
+		ScalarConverter &operator=(ScalarConverter const &rhs);
 };
 
 #endif

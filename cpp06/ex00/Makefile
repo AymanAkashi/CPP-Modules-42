@@ -4,7 +4,7 @@ INC_DIR			:= .
 
 # *********************************** Files ************************************
 NAME	:= convert
-SRCS	:= convert.cpp check.cpp main.cpp
+SRCS	:= convert.cpp main.cpp
 INC		:= convert.hpp
 OBJS	:= $(SRCS:.cpp=.o)
 
@@ -17,7 +17,7 @@ BLUE			:= \033[0;34m
 PURPLE			:= \033[1;35m
 # ****************************** Compiler Options ******************************
 CC			:= c++
-CFLAGS		:= -Wall -Wextra -Werror -std=c++11
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98
 # ******************************* Other commands *******************************
 RM		:= rm -rf
 MKDIR	:= mkdir -p
