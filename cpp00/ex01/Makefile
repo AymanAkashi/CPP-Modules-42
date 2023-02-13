@@ -16,7 +16,7 @@ BLUE			:= \033[0;34m
 PURPLE			:= \033[1;35m
 # ****************************** Compiler Options ******************************
 CC			:= c++
-CFLAGS		:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98
 
 
 # ******************************* Other commands *******************************
@@ -26,10 +26,9 @@ OBJ_DEP := $(addprefix $(OBJS_DIR)/, $(OBJS))
 # ********************************** Targets ***********************************
 all: $(NAME)
 
-$(NAME): $(OBJ_DEP) 
+$(NAME): $(OBJ_DEP) $(INC)
 		@echo "$(BLUE)Building	$(YELLOW)$(NAME)$(NC)"
 		@$(CC) $(CFLAGS) $(OBJ_DEP) -o $(NAME)
-
 
 $(OBJS_DIR)/%.o: %.cpp $(INC)
 	@$(MKDIR) $(OBJS_DIR)

@@ -6,12 +6,15 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:33:19 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/21 19:01:15 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:18:06 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
+/**
+ * It reads a command from the user, and if it's valid, it calls the appropriate function
+ */
 int main()
 {
 	std::string s;

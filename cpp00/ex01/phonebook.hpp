@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:39 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/22 18:29:48 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:20:42 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static std::string BLUE = "\033[1;34m";
 static std::string MAGENTA = "\033[1;35m";
 static std::string CYAN = "\033[1;36m";
 static std::string NC = "\033[0m";
+
 
 
 class Contact

@@ -6,12 +6,19 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:06:03 by aaggoujj          #+#    #+#             */
-/*   Updated: 2022/11/22 21:43:59 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:19:49 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
+/**
+ * It checks if the input is empty
+ * 
+ * @param s the string to check
+ * 
+ * @return the value of the variable i.
+ */
 int check_prompt(std::string &s)
 {
 	int i;
@@ -24,6 +31,13 @@ int check_prompt(std::string &s)
 	return (1);
 }
 
+/**
+ * It takes a string as an argument, prints it to the screen, then waits for the user to enter a string, and returns that string
+ * 
+ * @param s The prompt to display to the user.
+ * 
+ * @return A string
+ */
 std::string get_input(std::string s)
 {
 	std::string input;
@@ -39,6 +53,12 @@ std::string get_input(std::string s)
 	exit(EXIT_SUCCESS);
 }
 
+/**
+ * It prints the contact's information if the ID is found, otherwise it prints an error message
+ * 
+ * @param contacts an array of contacts
+ * @param id the id of the contact you want to display
+ */
 void	Contact::get_index(Contact contacts[8], int id)
 {
 	id--;
@@ -54,6 +74,12 @@ void	Contact::get_index(Contact contacts[8], int id)
 	}
 }
 
+/**
+ * It prints a string, and if the string is longer than 10 characters, it prints the first 10 characters and a period
+ * 
+ * @param s the string to be printed
+ * @param last a boolean value that determines whether or not to print a newline at the end of the string.
+ */
 void	put_string(std::string &s, bool last)
 {
 	if (s.length() < 10)
@@ -69,6 +95,13 @@ void	put_string(std::string &s, bool last)
 		std::cout << std::endl;
 }
 
+/**
+ * It checks if the ID is correct
+ * 
+ * @param s the ID of the command
+ * 
+ * @return a boolean value.
+ */
 bool check_command(int s)
 {
 	if (s > 8 || s <= 0)
@@ -79,6 +112,11 @@ bool check_command(int s)
 	return (true);
 }
 
+/**
+ * It takes a Contact object as a parameter, and then assigns the values of the object's attributes to the values of the attributes of the object that called the function
+ * 
+ * @param c the contact object that is being copied
+ */
 Contact::Contact(Contact &c)
 {
 	c.first_name = get_input("first name");
@@ -88,6 +126,9 @@ Contact::Contact(Contact &c)
 	c.darkest_secret = get_input("darkest secret");
 }
 
+/**
+ * It initializes the attributes of the Contact class to empty strings.
+ */
 Contact::Contact()
 {
 	this->first_name = "";
@@ -97,6 +138,11 @@ Contact::Contact()
 	this->darkest_secret = "";
 }
 
+/**
+ * It adds a contact to the phonebook.
+ * 
+ * @param pb the phonebook object
+ */
 void	Phonebook::add_contact(Phonebook &pb)
 {
 
@@ -104,6 +150,13 @@ void	Phonebook::add_contact(Phonebook &pb)
 	Contact(pb.contacts[pb.index]);
 	pb.index++;
 }
+/**
+ * It prints the contacts in a table format
+ * 
+ * @param contacts an array of contacts
+ * 
+ * @return bool
+ */
 
 bool	Contact::print_contact(Contact contacts[8])
 {
@@ -129,6 +182,11 @@ bool	Contact::print_contact(Contact contacts[8])
 	}
 	return (true);
 }
+/**
+ * This function is used to search for a contact in the phonebook
+ * 
+ * @param pb the phonebook object
+ */
 
 void	Phonebook::search_contact(Phonebook &pb)
 {
