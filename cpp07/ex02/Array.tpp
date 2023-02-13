@@ -6,7 +6,7 @@
 /*   By: aaggoujj <aaggoujj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:13:56 by aaggoujj          #+#    #+#             */
-/*   Updated: 2023/01/22 11:56:57 by aaggoujj         ###   ########.fr       */
+/*   Updated: 2023/02/12 11:21:24 by aaggoujj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,4 @@ template <typename T> class Array
             return size_;
         }
 };
+
